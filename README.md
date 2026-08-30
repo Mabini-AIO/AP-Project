@@ -26,7 +26,7 @@ A robust, object-oriented C# console application designed to manage the loan, re
 
 ## 🏗️ Architecture & Class Diagram
 
-![UML]()
+![UML](https://github.com/Mabini-AIO/AP-Project/blob/main/UML.png)
 
 ### 🧩 Design Patterns & Extensibility
 The system is built with high extensibility and maintainability in mind:
@@ -123,7 +123,7 @@ Before any operation, system verifies IDs. If a user inputs an ID without the pr
 
 ## 💻 Sample Console Execution
 
-![Console]()
+![Console](https://github.com/Mabini-AIO/AP-Project/blob/main/Exec.png)
 
 ## 🛡️ Challenges & Error Handling
 
