@@ -26,12 +26,7 @@ A robust, object-oriented C# console application designed to manage the loan, re
 
 ## 🏗️ Architecture & Class Diagram
 
-<!-- 🖼️ IMAGE PLACEHOLDER: Add your UML or Class Diagram image in the path below -->
-<div align="center">
-  <img src="assets/class_diagram.png" alt="Project Architecture and Class Diagram" width="800"/>
-  <br/>
-  <em>Figure 1: System Architecture and Class Diagram</em>
-</div>
+![UML]()
 
 ### 🧩 Design Patterns & Extensibility
 The system is built with high extensibility and maintainability in mind:
@@ -128,12 +123,7 @@ Before any operation, system verifies IDs. If a user inputs an ID without the pr
 
 ## 💻 Sample Console Execution
 
-<!-- 🖼️ IMAGE PLACEHOLDER: Add a screenshot of your running console application below -->
-<div align="center">
-  <img src="assets/console_execution.png" alt="Console Application Execution" width="600"/>
-  <br/>
-  <em>Figure 2: Console Interface Action</em>
-</div>
+![Console]()
 
 ## 🛡️ Challenges & Error Handling
 
