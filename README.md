@@ -1,4 +1,4 @@
-"""# 🎥 Media Equipment Management System
+# 🎥 Media Equipment Management System
 
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
@@ -9,9 +9,7 @@ A robust, object-oriented C# console application designed to manage the loan, re
 ---
 
 ## 👤 Project Identity Card
-- **Student Name:** Mohammad Mahdi Hajimobini
-- **Student ID:** 4042140039
-- **Project Code:** 1-3-4
+- **Project Code:** A4-B3-C1
 - **Theme (A4):** Media Equipment (Camera, Microphone, Tripod)
 
 ### ⚙️ System Parameters & Constraints
@@ -137,15 +135,37 @@ Before any operation, system verifies IDs. If a user inputs an ID without the pr
   <em>Figure 2: Console Interface Action</em>
 </div>
 
-```text
-Media Equipment Management System (A4-B3-C1) Mohammad Mahdi Hajimobini 4042140039 ===
-1. Add New User
-2. Add New Equipment
-3. Borrow Equipment
-...
-Enter your choice: 1
-User ID (e.g., 1): 1
-User Name: Mohammad Mahdi
-User Type (1 for Student, 2 for Professor): 1
-Is The User Active? (1 for Active 2 for Inactive): 1
-SUCCESS: USER USR-1187-1 ADDED
+## 🛡️ Challenges & Error Handling
+
+To ensure a robust and crash-free experience, the following defensive programming practices were implemented:
+
+1. **Exception Handling (`try-catch`):** Implemented in the `Program` class (for menu execution) and `BorrowEquipment` to catch unforeseen errors gracefully without crashing the application.
+2. **Safe Parsing (`TryParse`):** Used for parsing dates, numeric IDs, and tripod heights. If invalid formats are entered, the system warns the user (`ERROR: INVALID FORMAT`) instead of throwing exceptions.
+3. **Null Validation:** Prevents `NullReferenceException` by strictly verifying object existence in the Repository layer (`if (user == null)`) before proceeding with service logic.
+4. **Business Logic Control:** Multi-tier validations check for active user status, loan capacity, and reservation conflicts before processing requests.
+5. **Duplicate Prevention:** The Repository layer strictly enforces unique IDs via `userExists` and `equipmentExists` validations.
+6. **Structured Exceptions:** Throws standard `InvalidOperationException` specifically when a user exceeds their loan limits.
+
+---
+
+## 🤖 AI Tools Usage & Justification
+
+AI tools were utilized as a supplementary asset to speed up development while strictly managing technical debt and potential hallucinations.
+
+### Areas of Usage
+- **Architecture Consultation:** Discussing the optimal way to implement the Repository Pattern.
+- **Syntax Generation:** Utilizing AI to generate standard LINQ queries for list traversals.
+
+### Prompts & Discussions
+- *"How can I implement the Repository Pattern properly to separate the storage layer from the Service layer?"*
+- *"What is the difference between using global static variables versus a Singleton pattern for this project's scale?"*
+- *"Which version of this code is cleaner and more optimized: classic loops or modern LINQ?"*
+- **Code Review & Debugging:** Requested assistance resolving logical bugs (e.g., conflicts between `Reserved` and `Borrow` statuses, resetting `BorrowCount` logic, and `Available` status tracking after returns).
+
+### Accepted AI Suggestions
+- **Layered Structure:** Fully adopting the `Repository` class to handle data storage and transactions, drastically reducing code coupling.
+- **LINQ Integration:** Replaced nested `foreach` loops in Search and Reporting modules with optimized LINQ methods (`Where`, `FirstOrDefault`, `OrderByDescending`).
+- **Preventative Error Handling:** Using `TryParse` stringently over standard exceptions for console-based inputs.
+
+---
+*Developed as a Final Project for Advanced Programming Course.*
